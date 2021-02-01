@@ -1,3 +1,3 @@
-<app-search></app-search>
-<app-export></app-export>
+<input (keyup)="onKey($event)" type="text" placeholder="Zoek op locatie...">
+<button (click)="exportAppointments()">Exporteer naar ics bestand</button>
 <hr>
