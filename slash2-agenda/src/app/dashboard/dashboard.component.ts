@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AgendaService } from '../services/agenda.service';
 import { EventEmitterService } from '../services/event-emitter.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { EventEmitterService } from '../services/event-emitter.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private eventEmitterService: EventEmitterService) { }
+  constructor(private eventEmitterService: EventEmitterService, private agendaService: AgendaService) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +20,6 @@ export class DashboardComponent implements OnInit {
   }
 
   exportAppointments() {
-    console.log("Exporting appointments")
+    this.agendaService.exportAgenda();
   }
 }

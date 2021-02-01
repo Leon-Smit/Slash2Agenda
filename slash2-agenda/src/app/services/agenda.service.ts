@@ -29,6 +29,11 @@ export class AgendaService {
     this.filteredAppointments = filteredAppointments;
   }
 
+  public exportAgenda(): void {
+    console.log('Exporting appointments');
+    console.log(this.filteredAppointments);
+  }
+
   private loadAgenda() {
     const mockAppointments: Appointment[] = [
       {
