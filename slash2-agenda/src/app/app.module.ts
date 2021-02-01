@@ -11,12 +11,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     AppointmentListComponent,
     AppointmentComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

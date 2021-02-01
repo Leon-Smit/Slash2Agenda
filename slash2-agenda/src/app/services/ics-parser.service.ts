@@ -7,7 +7,13 @@ import { Appointment } from '../interfaces/appointment';
 export class IcsParserService {
   constructor() {}
 
-  parse(path: string): Appointment[] {
+  public writeToFile(appointments: Appointment[]): void {
+    // TODO: Write the appointments to file
+    console.log(appointments);
+  }
+
+  public readFromFile(path: string): Appointment[] {
+    // TODO: Parse from file to object of appointments
     return [
       {
         date: '01-02-2021',

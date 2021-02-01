@@ -33,8 +33,7 @@ export class AgendaService {
   }
 
   public exportAgenda(): void {
-    console.log('Exporting appointments');
-    console.log(this.filteredAppointments);
+    this.icsParserService.writeToFile(this.filteredAppointments);
   }
 
   private filterAppointments(): void {
@@ -45,9 +44,11 @@ export class AgendaService {
   }
 
   private loadAgenda() {
-    const mockAppointments: Appointment[] = this.icsParserService.parse('');
+    const appointments: Appointment[] = this.icsParserService.readFromFile(
+      './data/afstudeeropdracht-leon-smit.ics'
+    );
 
-    this.appointments = mockAppointments;
-    this.filteredAppointments = mockAppointments;
+    this.appointments = appointments;
+    this.filterAppointments();
   }
 }

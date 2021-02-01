@@ -5,21 +5,22 @@ import { EventEmitterService } from '../services/event-emitter.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  constructor(
+    private eventEmitterService: EventEmitterService,
+    private agendaService: AgendaService
+  ) {}
 
-  constructor(private eventEmitterService: EventEmitterService, private agendaService: AgendaService) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  onKey(event: any) {
+  public onKey(event: any) {
     const searchLocation: string = event.target.value;
     this.eventEmitterService.onLocationSearch(searchLocation);
   }
 
-  exportAppointments() {
+  public exportAppointments() {
     this.agendaService.exportAgenda();
   }
 }
