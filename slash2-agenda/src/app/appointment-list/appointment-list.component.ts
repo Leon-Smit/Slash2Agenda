@@ -31,7 +31,7 @@ export class AppointmentListComponent implements OnInit {
   }
 
   private filterAppointments(searchLocation: string) {
-    this.agendaService.filterAppointments(searchLocation);
+    this.agendaService.setLocationFilter(searchLocation);
     this.updateAppointments();
   }
 
