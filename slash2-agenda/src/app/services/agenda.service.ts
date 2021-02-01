@@ -51,4 +51,8 @@ export class AgendaService {
     this.appointments = appointments;
     this.filterAppointments();
   }
+
+  public setAppointments(appointments: Appointment[]) {
+    this.appointments = appointments;
+  }
 }
