@@ -8,13 +8,25 @@ import { AppointmentListComponent } from '../appointment-list/appointment-list.c
 })
 export class AgendaService {
   private appointments: Appointment[];
+  private filteredAppointments: Appointment[];
 
   constructor() {
     this.loadAgenda();
   }
 
   public getAppointments(): Appointment[] {
-    return this.appointments;
+    return this.filteredAppointments;
+  }
+
+  public filterAppointments(searchLocation: string): void {
+    const lcSearchLocation = searchLocation.toLowerCase();
+    const filteredAppointments: Appointment[] = [];
+    this.appointments.forEach((appointment) => {
+      if (appointment.location.toLowerCase().includes(lcSearchLocation)) {
+        filteredAppointments.push(appointment);
+      }
+    });
+    this.filteredAppointments = filteredAppointments;
   }
 
   private loadAgenda() {
@@ -50,5 +62,6 @@ export class AgendaService {
     ];
 
     this.appointments = mockAppointments;
+    this.filteredAppointments = mockAppointments;
   }
 }
