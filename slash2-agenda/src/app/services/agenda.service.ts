@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Appointment } from '../interfaces/appointment';
-import * as ICal from 'node-ical';
-import { AppointmentListComponent } from '../appointment-list/appointment-list.component';
 
 @Injectable({
   providedIn: 'root',
@@ -27,6 +25,15 @@ export class AgendaService {
       }
     });
     this.filteredAppointments = filteredAppointments;
+  }
+  
+  public removeAppointment(removeAppointment: Appointment): void {
+    this.appointments = this.appointments.filter((appointment) => {
+      return appointment !== removeAppointment;
+    })
+    this.filteredAppointments = this.appointments.filter((appointment) => {
+      return appointment !== removeAppointment;
+    })
   }
 
   public exportAgenda(): void {

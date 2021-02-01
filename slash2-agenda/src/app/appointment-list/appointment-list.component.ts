@@ -25,8 +25,17 @@ export class AppointmentListComponent implements OnInit {
     );
   }
 
+  public removeAppointment(appointment: Appointment):void {
+    this.agendaService.removeAppointment(appointment);
+    this.updateAppointments();
+  }
+
   private filterAppointments(searchLocation: string) {
     this.agendaService.filterAppointments(searchLocation);
+    this.updateAppointments();
+  }
+
+  private updateAppointments(): void {
     this.appointments = this.agendaService.getAppointments();
   }
 }

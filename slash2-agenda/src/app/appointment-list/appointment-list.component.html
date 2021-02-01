@@ -1,5 +1,5 @@
 <div>
     <div *ngFor="let appointment of appointments">
-        <app-appointment [appointment]="appointment"></app-appointment>
+        <app-appointment [appointment]="appointment" (removeAppointment)="removeAppointment($event)"></app-appointment>
     </div>
 </div>
