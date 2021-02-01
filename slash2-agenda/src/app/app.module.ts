@@ -6,6 +6,7 @@ import { AppointmentListComponent } from './appointment-list/appointment-list.co
 import { AppointmentComponent } from './appointment-list/appointment/appointment.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchComponent } from './dashboard/search/search.component';
+import { ExportComponent } from './dashboard/export/export.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SearchComponent } from './dashboard/search/search.component';
     AppointmentListComponent,
     AppointmentComponent,
     DashboardComponent,
-    SearchComponent
+    SearchComponent,
+    ExportComponent
   ],
   imports: [
     BrowserModule

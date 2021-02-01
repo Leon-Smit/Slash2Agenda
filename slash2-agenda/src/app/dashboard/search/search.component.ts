@@ -8,6 +8,8 @@ import { EventEmitterService } from 'src/app/services/event-emitter.service';
 })
 export class SearchComponent implements OnInit {
 
+  searchLocation: string;
+
   constructor(private eventEmitterService: EventEmitterService) { }
 
   ngOnInit(): void {
